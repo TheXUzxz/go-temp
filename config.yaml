@@ -1,0 +1,25 @@
+app:
+  name: 'web_app'
+  mode: "dev"
+  port: 8081
+log:
+  level: "debug"
+  filename: "web_app.log"
+  max_size: 200
+  max_age: 30
+  max_backups: 7
+mysql:
+  host: "49.233.9.221"
+  port: 13306
+  user: "root"
+  password: "mysql..1998"
+  dbname: "sql_demo"
+  max_open_cons: 5
+  max_idle_cons: 20
+redis:
+  host: "49.233.9.221"
+  port: 16379
+  db: 0
+  password: "redis..1998"
+  pool_size: 20
+
