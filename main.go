@@ -24,19 +24,20 @@ func main() {
 		fmt.Printf("init settings failed,err: %v \n ", err)
 		return
 	}
-	//
-	if err := logger.Init(); err != nil {
+	fmt.Println(settings.Conf)
+	//初始化日志
+	if err := logger.Init(settings.Conf.LogConfig); err != nil {
 		fmt.Printf("init logger failed,err: %v \n ", err)
 		return
 	}
 	zap.L().Debug("logger init success...")
 	//初始化mysql
-	if err := mysql.Init(); err != nil {
+	if err := mysql.Init(settings.Conf.MySQLConfig); err != nil {
 		fmt.Printf("init mysql failed,err: %v \n ", err)
 		return
 	}
 	//初始化redis
-	if err := redis.Init(); err != nil {
+	if err := redis.Init(settings.Conf.RedisConfig); err != nil {
 		fmt.Printf("init redis failed,err: %v \n ", err)
 		return
 	}
